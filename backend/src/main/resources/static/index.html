@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - AI Smart Expense Tracker</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="brand-logo">
+                    <i class="fas fa-brain"></i>
+                </div>
+                <div>
+                    <div class="brand-title">SmartExpense <span class="brand-badge">AI</span></div>
+                </div>
+            </div>
+
+            <nav class="sidebar-nav">
+                <a href="index.html" class="nav-item active">
+                    <i class="fas fa-chart-pie"></i>
+                    <span>Dashboard</span>
+                </a>
+                <a href="expenses.html" class="nav-item">
+                    <i class="fas fa-receipt"></i>
+                    <span>Expenses</span>
+                </a>
+                <a href="income.html" class="nav-item">
+                    <i class="fas fa-wallet"></i>
+                    <span>Income</span>
+                </a>
+                <a href="budgets.html" class="nav-item">
+                    <i class="fas fa-bullseye"></i>
+                    <span>Budgets</span>
+                </a>
+                <a href="analytics.html" class="nav-item">
+                    <i class="fas fa-chart-line"></i>
+                    <span>Analytics</span>
+                </a>
+            </nav>
+
+            <div class="sidebar-footer">
+                <div class="user-profile-badge">
+                    <div class="user-info">
+                        <div class="user-avatar" id="user-avatar">U</div>
+                        <div class="user-details">
+                            <h4 id="user-full-name">User</h4>
+                            <p id="user-email">user@example.com</p>
+                        </div>
+                    </div>
+                    <button class="btn-logout" id="btn-logout" title="Logout">
+                        <i class="fas fa-right-from-bracket"></i>
+                    </button>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Workspace -->
+        <main class="main-wrapper">
+            <div class="topbar">
+                <div class="page-header">
+                    <h1>Financial Overview</h1>
+                    <p>Real-time machine learning analytics & spending intelligence</p>
+                </div>
+                <div class="topbar-actions">
+                    <a href="expenses.html" class="btn btn-primary">
+                        <i class="fas fa-plus"></i> Add Expense
+                    </a>
+                    <a href="income.html" class="btn btn-success">
+                        <i class="fas fa-plus"></i> Add Income
+                    </a>
+                </div>
+            </div>
+
+            <!-- KPI Cards Row -->
+            <div class="kpi-grid">
+                <div class="kpi-card">
+                    <div class="kpi-info">
+                        <h3>Total Income</h3>
+                        <div class="kpi-value" id="kpi-total-income" style="color: var(--success);">₹0.00</div>
+                        <div class="kpi-meta" style="color: var(--success);">
+                            <i class="fas fa-arrow-trend-up"></i> Current period
+                        </div>
+                    </div>
+                    <div class="kpi-icon income">
+                        <i class="fas fa-arrow-down-left"></i>
+                    </div>
+                </div>
+
+                <div class="kpi-card">
+                    <div class="kpi-info">
+                        <h3>Total Expenses</h3>
+                        <div class="kpi-value" id="kpi-total-expense" style="color: var(--danger);">₹0.00</div>
+                        <div class="kpi-meta" style="color: var(--danger);">
+                            <i class="fas fa-arrow-trend-down"></i> Current period
+                        </div>
+                    </div>
+                    <div class="kpi-icon expense">
+                        <i class="fas fa-arrow-up-right"></i>
+                    </div>
+                </div>
+
+                <div class="kpi-card">
+                    <div class="kpi-info">
+                        <h3>Net Savings</h3>
+                        <div class="kpi-value" id="kpi-current-savings" style="color: var(--info);">₹0.00</div>
+                        <div class="kpi-meta" style="color: var(--text-secondary);">
+                            Savings Rate: <strong id="kpi-savings-rate" style="color: var(--info);">0%</strong>
+                        </div>
+                    </div>
+                    <div class="kpi-icon savings">
+                        <i class="fas fa-piggy-bank"></i>
+                    </div>
+                </div>
+
+                <div class="kpi-card">
+                    <div class="kpi-info">
+                        <h3>AI Spending Watch</h3>
+                        <div class="kpi-value" style="font-size: 1.25rem; margin-top: 4px;">
+                            <span id="kpi-anomaly-badge" class="badge badge-ai">0 Alerts</span>
+                        </div>
+                        <div class="kpi-meta" style="color: var(--ai-purple); margin-top: 12px;">
+                            <i class="fas fa-brain"></i> Isolation Forest Active
+                        </div>
+                    </div>
+                    <div class="kpi-icon ai">
+                        <i class="fas fa-shield-halved"></i>
+                    </div>
+                </div>
+            </div>
+
+            <!-- AI Insights Container -->
+            <div class="ai-insights-container">
+                <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px;">
+                    <h3 style="font-size: 1.05rem; font-weight: 700; color: var(--text-primary); display: flex; align-items: center; gap: 8px;">
+                        <i class="fas fa-sparkles" style="color: var(--ai-purple);"></i> AI Spending Insights
+                    </h3>
+                </div>
+                <div id="ai-insights-list">
+                    <!-- Dynamic insights rendered by app.js -->
+                </div>
+            </div>
+
+            <!-- Charts Row -->
+            <div class="dashboard-grid">
+                <div class="card">
+                    <div class="card-header">
+                        <h2><i class="fas fa-chart-column"></i> Monthly Income vs. Expense Trend</h2>
+                    </div>
+                    <div style="height: 300px; position: relative;">
+                        <canvas id="trendChart"></canvas>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <h2><i class="fas fa-chart-pie"></i> Category Breakdown</h2>
+                    </div>
+                    <div style="height: 300px; position: relative;">
+                        <canvas id="categoryChart"></canvas>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Category Budgets Section -->
+            <div class="card" style="margin-bottom: 32px;">
+                <div class="card-header">
+                    <h2><i class="fas fa-bullseye"></i> Category Budget Limits & Utilization</h2>
+                    <a href="budgets.html" class="btn btn-outline btn-sm">Manage Budgets <i class="fas fa-chevron-right"></i></a>
+                </div>
+                <div id="dashboard-budgets-container" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 16px;">
+                    <!-- Rendered by app.js -->
+                </div>
+            </div>
+
+            <!-- Recent Transactions Table -->
+            <div class="card">
+                <div class="card-header">
+                    <h2><i class="fas fa-clock-rotate-left"></i> Recent Transactions</h2>
+                    <a href="expenses.html" class="btn btn-outline btn-sm">View All Expenses <i class="fas fa-chevron-right"></i></a>
+                </div>
+                <div class="table-responsive">
+                    <table class="custom-table">
+                        <thead>
+                            <tr>
+                                <th>Transaction</th>
+                                <th>Category</th>
+                                <th>Amount</th>
+                                <th>Date</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody id="recent-transactions-tbody">
+                            <!-- Dynamic rows rendered by app.js -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="js/api.js"></script>
+    <script src="js/charts.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>

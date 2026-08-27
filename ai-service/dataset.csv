@@ -1,0 +1,115 @@
+text,category
+Swiggy dinner delivery,Food & Dining
+Swiggy food order biryani,Food & Dining
+Zomato order pizza and coke,Food & Dining
+Zomato online delivery lunch,Food & Dining
+McDonalds burger and fries meal,Food & Dining
+Starbucks caramel macchiato coffee,Food & Dining
+Dominos pepperoni pizza,Food & Dining
+Subway chicken teriyaki sandwich,Food & Dining
+KFC bucket meal with nuggets,Food & Dining
+Grocery shopping at Blinkit,Food & Dining
+Blinkit quick delivery snacks,Food & Dining
+Zepto milk eggs bread fruits,Food & Dining
+Instamart vegetables and snacks,Food & Dining
+Dinner at local Italian restaurant,Food & Dining
+Lunch buffet with colleagues,Food & Dining
+Cafe coffee day cold coffee and pastry,Food & Dining
+Biryani house mutton biryani,Food & Dining
+Bakery fresh bread cake pastries,Food & Dining
+Supermarket weekly groceries,Food & Dining
+Dine out meal drinks with friends,Food & Dining
+Breakfast tea samosa canteen,Food & Dining
+Uber cab ride to office,Transportation
+Uber trip fare taxi,Transportation
+Ola auto fare to metro station,Transportation
+Ola cab ride airport,Transportation
+Rapido bike ride to market,Transportation
+Petrol refueling at Shell petrol pump,Transportation
+Petrol Indian Oil station,Transportation
+Diesel fuel at HPCL pump,Transportation
+Monthly metro smart card recharge,Transportation
+Local train ticket to central,Transportation
+Flight ticket booking Indigo airlines,Transportation
+Air India flight booking,Transportation
+City bus daily transit pass,Transportation
+Highway toll plaza FASTag payment,Transportation
+Airport parking charges,Transportation
+Indian railways IRCTC train ticket reservation,Transportation
+Apartment monthly house rent,Housing & Rent
+House rent transfer to owner,Housing & Rent
+Society monthly maintenance charges,Housing & Rent
+Home mortgage installment payment,Housing & Rent
+Landlord rent payment via bank transfer,Housing & Rent
+Security deposit for flat lease,Housing & Rent
+Property tax municipal corporation,Housing & Rent
+Electricity bill payment state board,Utilities & Bills
+Electricity power bill BESCOM,Utilities & Bills
+Water utility bill municipal corporation,Utilities & Bills
+Broadband WiFi connection recharge JioFiber,Utilities & Bills
+Airtel broadband wifi bill,Utilities & Bills
+Airtel mobile prepaid recharge 84 days,Utilities & Bills
+Jio mobile prepaid recharge,Utilities & Bills
+Vodafone Idea Vi recharge bill,Utilities & Bills
+Piped gas bill payment Adani Gas,Utilities & Bills
+LPG gas cylinder refill booking,Utilities & Bills
+Tata Play DTH monthly subscription,Utilities & Bills
+Netflix premium 4K monthly subscription,Entertainment
+Netflix subscription renewal,Entertainment
+Spotify music family plan subscription,Entertainment
+Spotify premium music,Entertainment
+Amazon Prime Video annual membership,Entertainment
+Disney Hotstar subscription,Entertainment
+Movie tickets at PVR cinema IMAX,Entertainment
+Inox theatre popcorn and tickets,Entertainment
+BookMyShow concert pass entry,Entertainment
+BookMyShow movie ticket booking,Entertainment
+Steam PC game purchase summer sale,Entertainment
+PlayStation plus membership renewal,Entertainment
+Xbox game pass subscription,Entertainment
+Apollo pharmacy prescription medicines,Healthcare
+Doctor consultation fee hospital visit,Healthcare
+Medplus health tablets cough syrup,Healthcare
+Dental checkup and teeth cleaning,Healthcare
+Pharmeasy lab test blood report,Healthcare
+Pharmeasy medicine order online,Healthcare
+1mg medicine capsules syrup,Healthcare
+Eye clinic vision test and contact lenses,Healthcare
+Hospital admission health checkup,Healthcare
+Amazon shopping electronics laptop charger,Shopping
+Amazon online shopping clothes gadgets,Shopping
+Flipkart fashion clothes t-shirts jeans,Shopping
+Flipkart big billion day sale purchase,Shopping
+Myntra sneakers and jacket sale,Shopping
+Zara formal shirts and trousers,Shopping
+H&M casual hoodie and sweater,Shopping
+Nike running shoes sports gear,Shopping
+Adidas football training shoes,Shopping
+Croma home appliances microwave,Shopping
+Reliance digital bluetooth headphones,Shopping
+Udemy masterclass web development course,Education
+Udemy python course purchase,Education
+Coursera machine learning certification subscription,Education
+University semester exam fee,Education
+Textbooks and stationery notebook pens,Education
+Coding bootcamp monthly installment,Education
+Online coaching classes fee,Education
+Hotel room booking 3 nights Goa,Travel
+Airbnb apartment weekend getaway,Travel
+MakeMyTrip holiday package Manali,Travel
+MakeMyTrip hotel reservation,Travel
+Goibibo flight hotel combo booking,Travel
+Resort stay vacation booking,Travel
+Zerodha equity stock investment SIP,Investments
+Zerodha stock purchase shares,Investments
+Groww mutual fund monthly SIP payment,Investments
+Groww index fund investment,Investments
+Crypto purchase Bitcoin Binance,Investments
+CoinDCX crypto trading deposit,Investments
+Digital gold sovereign bond purchase,Investments
+Mutual fund lumpsum investment,Investments
+Annual bank locker fee,Other Expense
+Charity donation to foundation,Other Expense
+Legal notary stamp duty fee,Other Expense
+Courier parcel shipping charges,Other Expense
+ATM cash withdrawal misc,Other Expense

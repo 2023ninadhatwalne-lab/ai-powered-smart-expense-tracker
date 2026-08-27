@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analytics - AI Smart Expense Tracker</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="brand-logo">
+                    <i class="fas fa-brain"></i>
+                </div>
+                <div>
+                    <div class="brand-title">SmartExpense <span class="brand-badge">AI</span></div>
+                </div>
+            </div>
+
+            <nav class="sidebar-nav">
+                <a href="index.html" class="nav-item">
+                    <i class="fas fa-chart-pie"></i>
+                    <span>Dashboard</span>
+                </a>
+                <a href="expenses.html" class="nav-item">
+                    <i class="fas fa-receipt"></i>
+                    <span>Expenses</span>
+                </a>
+                <a href="income.html" class="nav-item">
+                    <i class="fas fa-wallet"></i>
+                    <span>Income</span>
+                </a>
+                <a href="budgets.html" class="nav-item">
+                    <i class="fas fa-bullseye"></i>
+                    <span>Budgets</span>
+                </a>
+                <a href="analytics.html" class="nav-item active">
+                    <i class="fas fa-chart-line"></i>
+                    <span>Analytics</span>
+                </a>
+            </nav>
+
+            <div class="sidebar-footer">
+                <div class="user-profile-badge">
+                    <div class="user-info">
+                        <div class="user-avatar" id="user-avatar">U</div>
+                        <div class="user-details">
+                            <h4 id="user-full-name">User</h4>
+                            <p id="user-email">user@example.com</p>
+                        </div>
+                    </div>
+                    <button class="btn-logout" id="btn-logout" title="Logout">
+                        <i class="fas fa-right-from-bracket"></i>
+                    </button>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-wrapper">
+            <div class="topbar">
+                <div class="page-header">
+                    <h1>AI Analytics & Insights</h1>
+                    <p>Comprehensive pattern discovery, category trends, and anomaly detection</p>
+                </div>
+                <div class="topbar-actions">
+                    <button class="btn btn-outline" onclick="initAnalyticsPage()">
+                        <i class="fas fa-arrows-rotate"></i> Refresh
+                    </button>
+                </div>
+            </div>
+
+            <!-- KPIs Row -->
+            <div class="kpi-grid">
+                <div class="kpi-card">
+                    <div class="kpi-info">
+                        <h3>Monthly Budget</h3>
+                        <div class="kpi-value" id="analytics-budget" style="color: var(--accent-primary);">₹0.00</div>
+                        <div class="kpi-meta" style="color: var(--text-muted);">Configured limit</div>
+                    </div>
+                    <div class="kpi-icon" style="background: rgba(99, 102, 241, 0.15); color: var(--accent-primary);">
+                        <i class="fas fa-bullseye"></i>
+                    </div>
+                </div>
+
+                <div class="kpi-card">
+                    <div class="kpi-info">
+                        <h3>Savings Rate</h3>
+                        <div class="kpi-value" id="analytics-savings-rate" style="color: var(--info);">0%</div>
+                        <div class="kpi-meta" style="color: var(--text-muted);">Recommended: >20%</div>
+                    </div>
+                    <div class="kpi-icon savings">
+                        <i class="fas fa-chart-pie"></i>
+                    </div>
+                </div>
+
+                <div class="kpi-card">
+                    <div class="kpi-info">
+                        <h3>Anomalies Flagged</h3>
+                        <div class="kpi-value" id="analytics-anomaly-count" style="color: var(--danger);">0</div>
+                        <div class="kpi-meta" style="color: var(--text-muted);">Isolation Forest alerts</div>
+                    </div>
+                    <div class="kpi-icon expense">
+                        <i class="fas fa-triangle-exclamation"></i>
+                    </div>
+                </div>
+            </div>
+
+            <!-- AI Insights -->
+            <div class="ai-insights-container">
+                <h3 style="font-size: 1.1rem; font-weight: 700; margin-bottom: 14px;">
+                    <i class="fas fa-sparkles" style="color: var(--ai-purple);"></i> Generated Spending Intelligence
+                </h3>
+                <div id="ai-insights-list">
+                    <!-- Dynamic insights -->
+                </div>
+            </div>
+
+            <!-- Charts Grid -->
+            <div class="dashboard-grid">
+                <div class="card">
+                    <div class="card-header">
+                        <h2><i class="fas fa-chart-column"></i> Multi-Month Revenue vs. Spending</h2>
+                    </div>
+                    <div style="height: 320px; position: relative;">
+                        <canvas id="analyticsTrendChart"></canvas>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <h2><i class="fas fa-chart-pie"></i> Category Distribution</h2>
+                    </div>
+                    <div style="height: 320px; position: relative;">
+                        <canvas id="analyticsCategoryChart"></canvas>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Anomalies Section -->
+            <div class="card">
+                <div class="card-header">
+                    <h2><i class="fas fa-shield-halved" style="color: var(--danger);"></i> Unusual Outlier Transactions</h2>
+                </div>
+                <div id="anomalies-list-container">
+                    <!-- Dynamic list of flagged anomalies -->
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="js/api.js"></script>
+    <script src="js/charts.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
